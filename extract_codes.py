@@ -29,8 +29,6 @@ def iter_row_by_column(ws, c):
     return datos
 
 
-
-
 def iter_rows(ws):
     for row in ws.iter_rows():
         yield [cell.value for cell in row if cell.value]
@@ -126,10 +124,12 @@ def main(column='a'):
                     noEncontrados.append(f'No se encontro: {e}')
             if enontrados:
                 pd.DataFrame(enontrados).to_excel(
-                    os.path.join('FacturasConCodigo', f'Encontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
+                    os.path.join(os.getcwd(), 'FacturasConCodigo',
+                                 f'Encontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
             if noEncontrados:
                 pd.DataFrame(noEncontrados).to_excel(
-                    os.path.join('FacturasConCodigo', f'noEncontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
+                    os.path.join(os.getcwd(), 'FacturasConCodigo',
+                                 f'noEncontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
         shutil.move(factura, 'Facturas')
 
 
