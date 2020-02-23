@@ -11,6 +11,17 @@ import ngram
 import pandas as pd
 
 
+if not os.path.exists('FacturasPendientes'):
+    os.mkdir('FacturasPendientes')
+
+if not os.path.exists('FacturasConCodigo'):
+    os.mkdir('FacturasConCodigo')
+
+if not os.path.exists('Facturas'):
+    os.mkdir('Facturas')
+
+
+
 def get_element_father(z):
     return z.iloc[0, 0], z.iloc[0, 1]
 
