@@ -125,11 +125,11 @@ def main(column='a'):
             if enontrados:
                 pd.DataFrame(enontrados).to_excel(
                     os.path.join(os.getcwd(), 'FacturasConCodigo',
-                                 f'Encontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
+                                 f'Encontrados_para_{hoja}.xlsx'))
             if noEncontrados:
                 pd.DataFrame(noEncontrados).to_excel(
                     os.path.join(os.getcwd(), 'FacturasConCodigo',
-                                 f'noEncontrados_para_{hoja}_{datetime.now().isoformat()}.xlsx'))
+                                 f'noEncontrados_para_{hoja}.xlsx'))
         shutil.move(factura, 'Facturas')
 
 
