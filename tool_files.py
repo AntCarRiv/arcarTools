@@ -130,9 +130,13 @@ def process_invoices(dfs, books):
                                              f'Encontrados_para_{sheet}.xlsx'), index=False)
 
 
-b = read_file_main()  # Book main sat
+def main():
+    b = read_file_main()  # Book main sat
 
-for factura in glob(os.path.join('FacturasPendientes', '*.xlsx')):
-    p_i = read_file_invoice(factura)  # Book invoice
-    process_invoices(p_i, b)
-    shutil.move(factura, 'Facturas')
+    for factura in glob(os.path.join('FacturasPendientes', '*.xlsx')):
+        p_i = read_file_invoice(factura)  # Book invoice
+        process_invoices(p_i, b)
+        shutil.move(factura, 'Facturas')
+
+
+main()
