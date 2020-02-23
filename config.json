@@ -1,0 +1,13 @@
+{
+  "Headers": {"Producto": "", "Clave": null, "Descripcion": "",
+            "Cantidad": 0, "Precio Unitario Sin Impustos": "",
+            "Tipo de Impuesto": "",
+            "Precio Unitario": 0,
+            "Descuento": 0, "Total": 0, "Estatus": ""}
+,
+  "impuestos": {
+    "IVA": 1.16,
+    "Tasa 0": 1.0,
+    "IEPS": 1.08
+  }
+}
